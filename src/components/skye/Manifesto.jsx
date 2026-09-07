@@ -1,8 +1,8 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { IMAGES } from "./images";
-const chapter1Img = (process.env.PUBLIC_URL || "") + "/images/chapter/01.png";
-const chapter2Img = (process.env.PUBLIC_URL || "") + "/images/chapter/02.png";
+const chapter1Img = (process.env.PUBLIC_URL || "") + "/images/chapter/01.webp";
+const chapter2Img = (process.env.PUBLIC_URL || "") + "/images/chapter/02.webp";
 
 
 const CHAPTERS = [

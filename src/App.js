@@ -104,7 +104,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter >
+      <BrowserRouter>
       <GTMPageTracker />
         <ScrollToTop />
         <Routes>

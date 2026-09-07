@@ -171,8 +171,8 @@ h1, h2, h3, h4, h5, h6, .font-display {
 @media (min-width: 640px) {
     .skye-btn {
         gap: 12px;
-        padding: 14px 26px;
-        font-size: 12px;
+        padding: 11px 20px;
+        font-size: 10px;
         letter-spacing: 0.2em;
     }
 }

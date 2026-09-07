@@ -464,7 +464,7 @@ export default function EnquiryModal() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  data-testid="modal-submit-enquiry"
+                  data-testid="modal-submit-enquiry" id="popup-submit-button"
                   className="w-full sm:w-auto inline-flex items-center gap-2.5 px-7 py-3 bg-[#597dae] hover:bg-[#486996] text-white font-sans font-medium text-xs tracking-[0.18em] uppercase rounded-full transition-all duration-300 shadow-md shrink-0 justify-center cursor-pointer border-none disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse" />

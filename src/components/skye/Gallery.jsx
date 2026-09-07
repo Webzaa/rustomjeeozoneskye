@@ -38,7 +38,7 @@ export default function Gallery() {
   const y2 = isMobile ? y2Mobile : y2Desktop;
 
   return (
-    <section id="gallery" ref={ref} data-testid="gallery-section" className="relative bg-[#fff] py-14 sm:py-18 md:py-20">
+    <section id="gallery" ref={ref} data-testid="gallery-section" className="relative bg-[#d7dfe5] py-14 sm:py-18 md:py-20">
       <div className="mx-auto max-w-[1500px] px-4 sm:px-6 md:px-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14">
           <div>

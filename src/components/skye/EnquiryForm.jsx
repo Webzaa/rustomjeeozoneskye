@@ -7,7 +7,11 @@ import { getMarketingData } from "@/lib/marketing";
 
 import "react-phone-input-2/lib/style.css";
 
-const CONFIGS = ["2 BHK", "3 BHK", "Explore Both"];
+const CONFIGS = [
+  { label: "2 BHK", id: "config-2-bhk" },
+  { label: "3 BHK", id: "config-3-bhk" },
+  { label: "Explore Both", id: "config-explore-both" },
+];
 
 
 const API_URL = "https://rustomjeeozoneskye.in/api/api.php";
@@ -230,10 +234,7 @@ export default function EnquiryForm() {
   };
 
   return (
-    <section
-      id="enquiry"
-      data-testid="enquiry-section"
-      className="relative bg-[#d8e0e6] text-[color:var(--skye-ink)] py-14 sm:py-18 md:py-20 overflow-hidden"
+    <section id="enquiry" data-testid="enquiry-section" className="relative bg-[#fff] text-[color:var(--skye-ink)] py-14 sm:py-18 md:py-20 overflow-hidden"
     >
       <div className="grain absolute inset-0 opacity-15" />
       <div className="absolute -left-40 -top-40 w-[520px] h-[520px] rounded-full bg-[color:var(--skye-ochre-deep)]/10 blur-3xl" />
@@ -248,7 +249,7 @@ export default function EnquiryForm() {
             className="col-span-12 lg:col-span-5 my-auto"
           >
             <div className="eyebrow text-[color:var(--skye-ochre-deep)] mb-4">
-              07 — Reserve a Preview
+              08 — Reserve a Preview
             </div>
             <h2 className="font-display leading-[1.22] sm:leading-[1.15] tracking-tighter text-[32px] sm:text-[44px] md:text-[52px] lg:text-[52px] text-[color:var(--skye-ink)]">
               {" "}
@@ -350,27 +351,28 @@ export default function EnquiryForm() {
                     Interested In
                   </label>
                   <div className="flex flex-wrap gap-2.5">
-                    {CONFIGS.map((c) => (
-                      <button
-                        key={c}
-                        type="button"
-                        data-testid={`config-choice-${c.replace(/\s+/g, "-")}`}
-                        onClick={() => setForm((s) => ({ ...s, config: c }))}
-                        className={`px-5 py-2.5 rounded-full text-[11px] sm:text-[12px] tracking-wider uppercase font-sans transition-all duration-300 border ${
-                          form.config === c
-                            ? "bg-[#597dae] text-white border-[#597dae] shadow-lg shadow-[#597dae]/20"
-                            : "border-[#597dae] text-[#597dae] hover:bg-[#597dae]/10"
-                        }`}
-                      >
-                        {c}
-                      </button>
-                    ))}
+                   {CONFIGS.map((c) => (
+                    <button
+                      key={c.id}
+                      id={c.id}
+                      type="button"
+                      data-testid={`config-choice-${c.label.replace(/\s+/g, "-")}`}
+                      onClick={() => setForm((s) => ({ ...s, config: c.label }))}
+                      className={`px-5 py-2.5 rounded-full text-[11px] sm:text-[12px] tracking-wider uppercase font-sans transition-all duration-300 border ${
+                        form.config === c.label
+                          ? "bg-[#597dae] text-white border-[#597dae] shadow-lg shadow-[#597dae]/20"
+                          : "border-[#597dae] text-[#597dae] hover:bg-[#597dae]/10"
+                      }`}
+                    >
+                      {c.label}
+                    </button>
+                  ))}
                   </div>
                 </div>
                 <button
                   type="submit"
-                  disabled={submitting}
-                  data-testid="submit-enquiry"
+                  disabled={submitting} 
+                  data-testid="submit-enquiry" id="send-enquiry-button"
                   className="w-full sm:w-auto inline-flex items-center gap-3 px-8 py-3.5 bg-[#597dae] hover:bg-[#486996] text-white font-sans font-medium text-xs tracking-[0.2em] uppercase rounded-full transition-all duration-300 shadow-lg shadow-[#597dae]/25 shrink-0 justify-center cursor-pointer border-none"
                 >
                   <span className="w-2 h-2 rounded-full bg-white animate-pulse" />

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-const residences = (process.env.PUBLIC_URL || "") + "/images/residences.jfif";
+const residences = (process.env.PUBLIC_URL || "") + "/images/residences.webp";
 
 
 const RESIDENCES = [
@@ -79,7 +79,7 @@ export default function Configurations() {
                     else el?.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                data-testid="config-cta-common" className="skye-btn">
+                data-testid="config-cta-common" id="request-floor-plan" className="skye-btn">
                 <span className="arrow-dot" />Request Floor Plan
               </button>
             </div>

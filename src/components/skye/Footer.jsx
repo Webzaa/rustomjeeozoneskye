@@ -13,7 +13,7 @@ export default function Footer() {
         </button>
     </div>
 
-      <footer data-testid="skye-footer" className="relative bg-[color:var(--skye-paper)] text-[color:var(--skye-ink)] pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden border-t border-black/5">
+      <footer data-testid="skye-footer" className="relative bg-[#d8e0e6] text-[color:var(--skye-ink)] pt-10 sm:pt-14 pb-6 sm:pb-8 overflow-hidden border-t border-black/5">
         <div className="mx-auto max-w-[1500px] px-4 sm:px-6 md:px-10">
           <div className="grid grid-cols-12 gap-6 lg:gap-12 items-center border-t border-black/10 pt-6 sm:pt-8">
             <div className="col-span-12 lg:col-span-9 order-2 lg:order-1">
@@ -67,8 +67,8 @@ export default function Footer() {
           <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-black/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="eyebrow text-[color:var(--skye-muted)]">© {new Date().getFullYear()} Rustomjee Group · Crafted for the sky</div>
             <div className="flex items-center gap-6 eyebrow text-[color:var(--skye-muted)] uppercase">
-              <Link to="/privacy-policy" className="hover:text-[color:var(--skye-ink)] transition-colors uppercase">PRIVACY</Link>
-              <Link to="/terms-conditions" className="hover:text-[color:var(--skye-ink)] transition-colors uppercase">TERMS &amp; CONDITIONS</Link>
+              <Link to="/privacy-policy" id="privacy-policy" className="hover:text-[color:var(--skye-ink)] transition-colors uppercase">PRIVACY</Link>
+              <Link to="/terms-conditions" id="terms-conditions" className="hover:text-[color:var(--skye-ink)] transition-colors uppercase">TERMS &amp; CONDITIONS</Link>
             </div>
           </div>
         </div>

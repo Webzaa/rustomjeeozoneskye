@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { IMAGES } from "./images";
 
-const locationMapImg = (process.env.PUBLIC_URL || "") + "/images/location-map.jpg";
+const locationMapImg = (process.env.PUBLIC_URL || "") + "/images/location-map.webp";
 
 const ROADWAYS_LEFT = [
   { label: "Goregaon-Mulund Link Road (GMLR)", value: "15–20 mins" },

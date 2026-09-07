@@ -4,11 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 const logoImg = (process.env.PUBLIC_URL || "") + "/images/logo.png";
 
 const NAV = [
-  { id: "manifesto", label: "Manifesto" },
-  { id: "residences", label: "Residences" },
-  { id: "sky-clubhouse", label: "Sky Clubhouse" },
-  { id: "location", label: "Location" },
-  { id: "gallery", label: "Gallery" },
+  { id: "manifesto", label: "Manifesto", uid: "nav-manifesto" },
+  { id: "explore-view", label: "Explore View", uid: "nav-explore-view" },
+  { id: "residences", label: "Residences", uid: "nav-residences" },
+  { id: "sky-clubhouse", label: "Sky Clubhouse", uid: "nav-sky-clubhouse" },
+  { id: "location", label: "Location", uid: "nav-location" },
+  { id: "gallery", label: "Gallery", uid: "nav-gallery" },
 ];
 
 export default function Header() {
@@ -47,7 +48,7 @@ export default function Header() {
         </button>
         <nav className="hidden lg:flex items-center gap-9">
           {NAV.map((n) => (
-            <button key={n.id} onClick={() => jump(n.id)} data-testid={`nav-${n.id}`} className={`text-[12px] tracking-[0.18em] uppercase transition-colors link-underline ${scrolled ? "text-white/80 hover:text-white" : "text-[color:var(--skye-ink)]/80 hover:text-[color:var(--skye-ink)]"}`}>
+            <button key={n.id} id={n.uid} onClick={() => jump(n.id)} data-testid={`nav-${n.id}`} className={`text-[10px] tracking-[0.18em] uppercase transition-colors link-underline ${scrolled ? "text-white/80 hover:text-white" : "text-[color:var(--skye-ink)]/80 hover:text-[color:var(--skye-ink)]"}`}>
               {n.label}
             </button>
           ))}
@@ -55,7 +56,7 @@ export default function Header() {
 
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <div className="hidden lg:block">
-            <button data-testid="cta-book-site-visit-header" onClick={() => window.openEnquiryModal ? window.openEnquiryModal("Book a Site Visit") : jump("enquiry")} className={`skye-btn ${scrolled ? "!bg-[#597dae] !text-white hover:!bg-[#486996]" : ""}`}>
+            <button data-testid="cta-book-site-visit-header" id="nav-book-site-visit" onClick={() => window.openEnquiryModal ? window.openEnquiryModal("Book a Site Visit") : jump("enquiry")} className={`skye-btn ${scrolled ? "!bg-[#597dae] !text-white hover:!bg-[#486996]" : ""}`}>
               <span className="arrow-dot" />Book a Site Visit
             </button>
           </div>

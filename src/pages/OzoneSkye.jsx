@@ -9,6 +9,7 @@ import EditorialMarquee from "@/components/skye/EditorialMarquee";
 import Location from "@/components/skye/Location";
 import Specifications from "@/components/skye/Specifications";
 import Gallery from "@/components/skye/Gallery";
+import ExploreView from "@/components/skye/ExploreView";
 import EnquiryForm from "@/components/skye/EnquiryForm";
 import Footer from "@/components/skye/Footer";
 import StickyCTA from "@/components/skye/StickyCTA";
@@ -22,6 +23,7 @@ export default function OzoneSkye() {
       <LegacyStrip />
       <EditorialMarquee />
       <Manifesto />
+      <ExploreView />
       <Configurations />
       <SkyClubhouse />
       <Location />
