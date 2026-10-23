@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 import React, { useRef, useState } from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 import PhoneInput from "react-phone-input-2";
 import { getMarketingData } from "@/lib/marketing";
+<<<<<<< HEAD
 import { FORMS, pushLeadSubmitted, useLeadFormTracking } from "@/lib/moengage";
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
 
 import "react-phone-input-2/lib/style.css";
 
@@ -32,6 +39,7 @@ export default function EnquiryForm() {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
 
+<<<<<<< HEAD
   // MoEngage: lead_form_started / lead_form_abandoned
   const formRef = useRef(null);
   const { onBlurCapture, markSubmitted } = useLeadFormTracking({
@@ -40,6 +48,8 @@ export default function EnquiryForm() {
     observeRef: formRef,
   });
 
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
   const update = (key) => (event) => {
     setForm((prev) => ({
       ...prev,
@@ -115,6 +125,7 @@ export default function EnquiryForm() {
     }
 
     // =========================
+<<<<<<< HEAD
     // CONSENT VALIDATION
     // =========================
     if (!form.consent) {
@@ -122,6 +133,8 @@ export default function EnquiryForm() {
     }
 
     // =========================
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
     // SET ERRORS
     // =========================
     setErrors(newErrors);
@@ -229,10 +242,13 @@ export default function EnquiryForm() {
         throw new Error(result.msg || "Lead submission failed.");
       }
 
+<<<<<<< HEAD
       // MoEngage: backend confirmed the save (no OTP step on this page)
       markSubmitted();
       pushLeadSubmitted({ form, formMeta: FORMS.section, result });
 
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
       toast.success(
         "Thank you — a Rustomjee relationship manager will call you within 24 hours.",
       );
@@ -283,9 +299,13 @@ export default function EnquiryForm() {
             </div>
           </motion.div>
           <motion.form
+<<<<<<< HEAD
             ref={formRef}
             onSubmit={onSubmit}
             onBlurCapture={onBlurCapture}
+=======
+            onSubmit={onSubmit}
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
             noValidate
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -301,7 +321,10 @@ export default function EnquiryForm() {
                 </label>
                 <input
                   data-testid="input-name"
+<<<<<<< HEAD
                   name="name"
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
                   className={`skye-input !text-[color:var(--skye-ink)] !opacity-100 !border-b ${errors.name ? "!border-b-red-500 focus:!border-b-red-600" : "!border-b-[color:var(--skye-ink)]/30 focus:!border-b-[color:var(--skye-ochre-deep)]"} placeholder:text-[color:var(--skye-ink)]/40 text-base`}
                   placeholder="Enter your name"
                   value={form.name}
@@ -319,7 +342,10 @@ export default function EnquiryForm() {
                 </label>
                 <input
                   data-testid="input-email"
+<<<<<<< HEAD
                   name="email"
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
                   type="email"
                   className={`skye-input !text-[color:var(--skye-ink)] !opacity-100 !border-b ${errors.email ? "!border-b-red-500 focus:!border-b-red-600" : "!border-b-[color:var(--skye-ink)]/30 focus:!border-b-[color:var(--skye-ochre-deep)]"} placeholder:text-[color:var(--skye-ink)]/40 text-base`}
                   placeholder="Enter your email"
@@ -369,6 +395,7 @@ export default function EnquiryForm() {
                   </span>
                 )}
               </div>
+<<<<<<< HEAD
               <div className="col-span-2 relative pt-1">
                 <label className="flex items-start gap-2 cursor-pointer select-none">
                   <input
@@ -393,6 +420,8 @@ export default function EnquiryForm() {
                   </span>
                 )}
               </div>
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
               <div className="col-span-2 mt-2 pt-2 flex flex-col sm:flex-row sm:items-end justify-between gap-5">
                 <div>
                   <label className="eyebrow block text-[10px] text-[color:var(--skye-ochre-deep)] mb-3 tracking-widest">

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { getMarketingData } from "@/lib/marketing";
+<<<<<<< HEAD
 import {
   FORMS,
   FLOOR_PLAN_MODAL_TITLE,
@@ -12,6 +13,8 @@ import {
   pushLeadSubmitted,
   useLeadFormTracking,
 } from "@/lib/moengage";
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
 
 const API_URL = "https://rustomjeeozoneskye.in/api/api.php";
 
@@ -36,6 +39,7 @@ export default function EnquiryModal() {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
 
+<<<<<<< HEAD
   // MoEngage: the popup is used for two forms, told apart by its title
   const isFloorPlan = modalTitle === FLOOR_PLAN_MODAL_TITLE;
   const formMeta = isFloorPlan ? FORMS.floorPlan : FORMS.popup;
@@ -45,6 +49,8 @@ export default function EnquiryModal() {
     active: isOpen,
   });
 
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
   // =========================================================
   // COMMON INPUT CHANGE HANDLER
   // =========================================================
@@ -175,6 +181,7 @@ export default function EnquiryModal() {
       newErrors.email = "Please enter a valid email address.";
     }
 
+<<<<<<< HEAD
     // -------------------------------------------------------
     // CONSENT VALIDATION
     // -------------------------------------------------------
@@ -182,6 +189,8 @@ export default function EnquiryModal() {
       newErrors.consent = "Please agree to the authorization terms to proceed.";
     }
 
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
     setErrors(newErrors);
 
     return Object.keys(newErrors).length === 0;
@@ -308,6 +317,7 @@ export default function EnquiryModal() {
         throw new Error(result.msg || "Lead submission failed.");
       }
 
+<<<<<<< HEAD
       // MoEngage: backend confirmed the save (no OTP step on this page)
       markSubmitted();
       pushLeadSubmitted({ form, formMeta, result });
@@ -315,6 +325,8 @@ export default function EnquiryModal() {
         pushFloorPlanDownloaded({ configuration: form.config });
       }
 
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
       // Success message
       toast.success(
         "Thank you — a Rustomjee relationship manager will call you within 24 hours.",
@@ -392,14 +404,21 @@ export default function EnquiryModal() {
                 you.
               </p>
             </div>
+<<<<<<< HEAD
             <form onSubmit={onSubmit} onBlurCapture={onBlurCapture} noValidate className="space-y-4">
+=======
+            <form onSubmit={onSubmit} noValidate className="space-y-4">
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
               <div className="relative">
                 <label className="eyebrow block text-[10px] text-[color:var(--skye-ochre-deep)] mb-1 tracking-widest">
                   Full Name *
                 </label>
                 <input
                   data-testid="modal-input-name"
+<<<<<<< HEAD
                   name="name"
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
                   type="text"
                   className={`skye-input !text-[color:var(--skye-ink)] !opacity-100 !border-b ${errors.name ? "!border-b-red-500 focus:!border-b-red-600" : "!border-b-[color:var(--skye-ink)]/30 focus:!border-b-[color:var(--skye-ochre-deep)]"} placeholder:text-[color:var(--skye-ink)]/40 placeholder:text-[12px] placeholder:font-sans text-sm !py-2`}
                   placeholder="Enter your full name"
@@ -456,7 +475,10 @@ export default function EnquiryModal() {
                 </label>
                 <input
                   data-testid="modal-input-email"
+<<<<<<< HEAD
                   name="email"
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
                   type="email"
                   className={`skye-input !text-[color:var(--skye-ink)] !opacity-100 !border-b ${errors.email ? "!border-b-red-500 focus:!border-b-red-600" : "!border-b-[color:var(--skye-ink)]/30 focus:!border-b-[color:var(--skye-ochre-deep)]"} placeholder:text-[color:var(--skye-ink)]/40 placeholder:text-[12px] placeholder:font-sans text-sm !py-2`}
                   placeholder="Enter your email address"
@@ -491,6 +513,7 @@ export default function EnquiryModal() {
                 </div>
               </div>
 
+<<<<<<< HEAD
               {/* CONSENT CHECKBOX */}
               <div className="relative pt-1">
                 <label className="flex items-start gap-2 cursor-pointer select-none">
@@ -517,6 +540,8 @@ export default function EnquiryModal() {
                 )}
               </div>
 
+=======
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
               {/* SUBMIT */}
               <div className="pt-3 flex justify-end">
                 <button

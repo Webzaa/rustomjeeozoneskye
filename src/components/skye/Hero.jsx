@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 
+<<<<<<< HEAD
 const HeroDesktop = process.env.PUBLIC_URL + "/images/slider/desktop23-09-26.webp";
 const HeroMobile = process.env.PUBLIC_URL + "/images/slider/mobile23-09-26.webp";
+=======
+const HeroDesktop = process.env.PUBLIC_URL + "/images/slider/desktop.webp";
+const HeroMobile = process.env.PUBLIC_URL + "/images/slider/mobile.webp";
+>>>>>>> 1351584ad7b6009b0d9656a989636f49d17e4a4c
 const QRImage = process.env.PUBLIC_URL + "/images/qr.png";
 export default function Hero() {
   const [isMahaReraOpen, setIsMahaReraOpen] = useState(false);
