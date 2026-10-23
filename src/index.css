@@ -1,0 +1,490 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@200;300;400;500;600;700;800&display=swap"); */
+
+@font-face {
+    font-family: "Futura-Book";
+    src: url("./font/Futura\ Book.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Goudy";
+    src: url("./font/Goudy Italic.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --skye-bg: #f6f4ee;
+    --skye-paper: #fbf9f3;
+    --skye-ink: #0a1128;
+    --skye-ink-2: #101a3c;
+    --skye-muted: #6b6f7e;
+    --skye-sky-1: #e3eaf4;
+    --skye-sky-2: #c7d6eb;
+    --skye-sky-3: #7a9cc6;
+    --skye-ochre: #7a9cc6;
+    --skye-ochre-deep: #597dae;
+    --skye-line: rgba(10, 17, 40, 0.14);
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--skye-bg);
+    color: var(--skye-ink);
+    font-family: "Goudy", serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: "Futura-Book", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.0em;
+}
+
+.font-sans {
+    font-family: "Goudy", "Manrope", sans-serif;
+}
+
+/* Editorial numeric numerals */
+.numeral {
+    font-family: "Futura-Book",  serif;
+    font-weight: 300;
+    font-feature-settings:
+        "lnum" 1,
+        "tnum" 0;
+    font-style: italic;
+}
+
+.eyebrow {
+    font-family: "Goudy", "Manrope", sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 15px;
+    color: var(--skye-sky-3);
+}
+
+.hairline {
+    height: 1px;
+    background: var(--skye-line);
+    width: 100%;
+}
+
+/* Grain overlay */
+.grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Line reveal masking */
+.line-mask {
+    display: block;
+    overflow: hidden;
+    line-height: 1.02;
+    padding-top: 0.02em;
+    padding-bottom: 0.18em;
+    margin-top: -0.02em;
+}
+
+/* Custom smooth cursor for premium feel */
+::selection {
+    background: var(--skye-ink);
+    color: var(--skye-paper);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Marquee */
+@keyframes marquee-slow {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-slow 60s linear infinite;
+    will-change: transform;
+}
+
+/* .marquee-track:hover {
+    animation-play-state: paused;
+} */
+
+/* Skye button */
+.skye-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: #597dae;
+    color: #ffffff;
+    border-radius: 999px;
+    font-family: "Goudy", "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease,
+        letter-spacing 0.35s ease;
+    cursor: pointer;
+    border: none;
+    overflow: hidden;
+}
+@media (min-width: 640px) {
+    .skye-btn {
+        gap: 12px;
+        padding: 11px 20px;
+        font-size: 10px;
+        letter-spacing: 0.2em;
+    }
+}
+.skye-btn:hover {
+    background: #486996;
+    letter-spacing: 0.26em;
+}
+.skye-btn:hover .arrow-dot {
+    transform: translateX(4px);
+}
+.arrow-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.skye-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    color: var(--skye-ink);
+    font-family: "Goudy", "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--skye-line);
+    background: transparent;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+.skye-btn-ghost:hover {
+    border-color: var(--skye-ink);
+}
+
+/* Underline hover */
+.link-underline {
+    position: relative;
+    display: inline-block;
+}
+.link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -3px;
+    height: 1px;
+    background: currentColor;
+    transition: right 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.link-underline:hover::after {
+    right: 0;
+}
+
+/* Editorial input */
+.skye-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--skye-line);
+    padding: 14px 0;
+    font-family: "Goudy", "Manrope", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--skye-ink);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.skye-input:focus {
+    border-color: var(--skye-ink);
+}
+.skye-input::placeholder {
+    color: var(--skye-muted);
+}
+
+/* Spotlight image treatment */
+.spotlight {
+    position: relative;
+    overflow: hidden;
+}
+.spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 45%,
+        rgba(10, 17, 40, 0.45) 100%
+    );
+    pointer-events: none;
+}
+
+/* Clipped frame */
+.clip-slant {
+    clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+}
+
+/* Shadcn base */
+@layer base {
+    :root {
+        --background: 44 33% 96%;
+        --foreground: 224 61% 10%;
+        --card: 44 33% 96%;
+        --card-foreground: 224 61% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 61% 10%;
+        --primary: 224 61% 10%;
+        --primary-foreground: 44 33% 96%;
+        --secondary: 214 40% 91%;
+        --secondary-foreground: 224 61% 10%;
+        --muted: 44 20% 92%;
+        --muted-foreground: 220 8% 45%;
+        --accent: 30 39% 55%;
+        --accent-foreground: 44 33% 96%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 224 20% 88%;
+        --input: 224 20% 88%;
+        --ring: 224 61% 10%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * {
+        border-color: hsl(var(--border));
+    }
+    body {
+        background: var(--skye-bg);
+        color: hsl(var(--foreground));
+    }
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        gap: inherit;
+    }
+}
+
+/* react-phone-input-2 Skye luxury theme overrides */
+.react-tel-input,
+.phone-input-container {
+    width: 100% !important;
+    font-family: "Goudy", "Manrope", sans-serif !important;
+}
+
+.react-tel-input .form-control,
+.phone-input-container .form-control,
+.phone-input-container .form-control.phone-input {
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(10, 17, 40, 0.3) !important;
+    border-radius: 0 !important;
+    padding: 12px 0 12px 52px !important;
+    font-size: 15px !important;
+    color: var(--skye-ink) !important;
+    height: auto !important;
+    transition: border-color 0.3s ease !important;
+}
+
+.react-tel-input .form-control::placeholder,
+.phone-input-container .form-control::placeholder,
+.phone-input-container .form-control.phone-input::placeholder {
+    color: rgba(10, 17, 40, 0.4) !important;
+    font-family: "Goudy", "Manrope", sans-serif !important;
+    font-style: italic !important;
+    font-size: 14px !important;
+    opacity: 1 !important;
+}
+
+.react-tel-input .form-control:focus,
+.phone-input-container .form-control:focus,
+.phone-input-container .form-control.phone-input:focus {
+    border-bottom-color: var(--skye-ochre-deep) !important;
+    box-shadow: none !important;
+}
+
+.react-tel-input .form-control.phone-input-error,
+.phone-input-container .form-control.phone-input-error {
+    border-bottom-color: #ef4444 !important;
+}
+
+.react-tel-input .flag-dropdown,
+.phone-input-container .flag-dropdown {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(10, 17, 40, 0.3) !important;
+    border-radius: 0 !important;
+    padding-left: 0 !important;
+}
+
+.react-tel-input .flag-dropdown.open,
+.react-tel-input .flag-dropdown:hover,
+.react-tel-input .flag-dropdown:focus,
+.phone-input-container .flag-dropdown.open,
+.phone-input-container .flag-dropdown:hover,
+.phone-input-container .flag-dropdown:focus {
+    background: transparent !important;
+}
+
+.react-tel-input .selected-flag,
+.phone-input-container .selected-flag {
+    background: transparent !important;
+    padding: 0 6px 0 0 !important;
+    width: 45px !important;
+}
+
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus,
+.phone-input-container .selected-flag:hover,
+.phone-input-container .selected-flag:focus {
+    background: transparent !important;
+}
+
+.react-tel-input .country-list,
+.phone-input-container .country-list {
+    background: #d8e0e6 !important;
+    color: var(--skye-ink) !important;
+    border: 1px solid rgba(10, 17, 40, 0.15) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    margin-top: 4px !important;
+}
+
+.react-tel-input .country-list .country:hover,
+.react-tel-input .country-list .country.highlight,
+.phone-input-container .country-list .country:hover,
+.phone-input-container .country-list .country.highlight {
+    background: rgba(89, 125, 174, 0.18) !important;
+    color: var(--skye-ink) !important;
+}
+
+.react-tel-input .country-list .search,
+.phone-input-container .country-list .search {
+    background: #d8e0e6 !important;
+    padding: 8px !important;
+}
+
+.react-tel-input .country-list .search-box,
+.phone-input-container .country-list .search-box {
+    background: #ffffff !important;
+    border: 1px solid rgba(10, 17, 40, 0.2) !important;
+    border-radius: 4px !important;
+    color: var(--skye-ink) !important;
+    font-size: 13px !important;
+}
+
+
+.skye-btn-footer {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 20px;
+    background: #597dae;
+    color: #ffffff;
+    border-radius: 0;
+    font-family: "Goudy", "Manrope", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease,
+        letter-spacing 0.35s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+@keyframes shine-sweep {
+    0% {
+        transform: translateX(-100%) skewX(-20deg);
+    }
+    60%, 100% {
+        transform: translateX(300%) skewX(-20deg);
+    }
+}
+
+.skye-btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.skye-btn-shine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.55) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-100%) skewX(-20deg);
+    animation: shine-sweep 2.2s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
